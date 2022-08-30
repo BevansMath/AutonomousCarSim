@@ -10,9 +10,12 @@ animate();
 
 function animate(){
     car.update();
-    
+
     canvas.height=window.innerHeight;
     car.draw(ctx);
     requestAnimationFrame(animate); //calls the animate frame many times per second
 
+    //if(car.update(this.controls.forward)=canvas.width){ //Constructing uncrossable borders
+         
+    
 }

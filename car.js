@@ -7,9 +7,7 @@ class Car{
 
         this.velocity=0;
         this.acceleration=0.2;
-
         this.maxVelocity=3;
-
         this.friction=0.05;
 
         this.controls=new Controls();
@@ -52,7 +50,7 @@ class Car{
         }
         
         this.y-=this.velocity;
-        this.y+=this.acceleration;
+        //this.y+=this.acceleration;
     }
 
     draw(ctx){
