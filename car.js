@@ -8,7 +8,9 @@ class Car{
         this.velocity=0;
         this.acceleration=0.2;
 
-        this.friction=0.2
+        this.maxVelocity=3;
+
+        this.friction=0.05;
 
         this.controls=new Controls();
     }
@@ -32,6 +34,23 @@ class Car{
         if(this.controls.reverse){
             this.velocity-=this.acceleration;
         }
+        
+        if(this.velocity>this.maxVelocity){
+            this.velocity=this.maxVelocity;
+        }
+        if(this.velocity<-this.maxVelocity/2){
+            this.velocity=-this.maxVelocity/2;
+        }
+        if(this.velocity>0){
+            this.velocity-=this.friction;
+        }
+        if(this.velocity<0){
+            this.velocity+=this.friction;
+        }
+        if(Math.abs(this.velocity)<this.friction){
+            this.velocity=0;
+        }
+        
         this.y-=this.velocity;
         this.y+=this.acceleration;
     }
