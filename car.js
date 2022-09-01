@@ -22,16 +22,7 @@ class Car{
         if(this.controls.reverse){
             this.y+=2;
         }
-        if(this.controls.left){
-            this.angle+=0.03;
-
-            
-        }
-        if(this.controls.right){
-            this.angle-=0.03;
-
-            
-        }
+        
         if(this.controls.forward){
             this.velocity+=this.acceleration;
         }
@@ -53,6 +44,16 @@ class Car{
         }
         if(Math.abs(this.velocity)<this.friction){
             this.velocity=0;
+        }
+        if(this.velocity!=0){
+            const flip = this.velocity>0?1:-1;
+            if(this.controls.left){
+                this.angle-=0.03*flip;
+            }
+            if(this.controls.right){
+                this.angle-=0.03*flip;
+            }
+
         }
         
         
