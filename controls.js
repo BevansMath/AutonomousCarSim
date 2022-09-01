@@ -19,9 +19,11 @@ class Controls{
                     break;
                 case "ArrowUp":
                     this.forward=true;
+                   
                     break;
                 case "ArrowDown":
                     this.reverse=true;
+                    
                     break
             }
             console.table(this);

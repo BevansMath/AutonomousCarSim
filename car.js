@@ -10,6 +10,8 @@ class Car{
         this.maxVelocity=3;
         this.friction=0.05;
 
+        this.angle=0;
+
         this.controls=new Controls();
     }
 
@@ -21,10 +23,14 @@ class Car{
             this.y+=2;
         }
         if(this.controls.left){
-            this.x-=2;
+            this.angle+=0.03;
+
+            
         }
         if(this.controls.right){
-            this.x+=2;
+            this.angle-=0.03;
+
+            
         }
         if(this.controls.forward){
             this.velocity+=this.acceleration;
@@ -49,18 +55,27 @@ class Car{
             this.velocity=0;
         }
         
-        this.y-=this.velocity;
-        //this.y+=this.acceleration;
+        
+        this.x-=Math.sin(this.angle)*this.velocity;
+        this.y-=Math.cos(this.angle)*this.velocity;
+        
     }
 
     draw(ctx){
+        ctx.save();
+        ctx.translate(this.x,this.y);
+        ctx.rotate(-this.angle);
+
         ctx.beginPath();
         ctx.rect(
-            this.x-this.width/2,
-            this.y-this.height/2,
+            -this.width/2,
+            -this.height/2,
             this.width,
             this.height
         );
         ctx.fill();
+
+        ctx.restore();               //Prevents infinite series of translations and rotations
+
     }
 }
