@@ -16,6 +16,10 @@ class Car{
     }
 
     update(){
+        this.#move();
+    }
+
+    #move(){
         if(this.controls.forward){
             this.y-=2;
         }
@@ -61,6 +65,7 @@ class Car{
         this.y-=Math.cos(this.angle)*this.velocity;
         
     }
+    
 
     draw(ctx){
         ctx.save();
