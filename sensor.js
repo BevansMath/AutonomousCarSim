@@ -1,16 +1,16 @@
 class Sensor{
     constructor(car){
         this.car=car;
-        this.rayCount=3;
+        this.rayCount=3; // casts rays in different directions
         this.rayLength=100;
-        this.raySpread=Math.PI/4;
+        this.raySpread=Math.PI/4; // 45 degrees
 
-        this.rays=[];
+        this.rays=[]; // Keeps individual array after we make them
 
     }
 
     update(){
-        this.rays=[];
+        this.rays=[]; // Set rays to an empty array
         for(let i=0; i<this.rayCount;i++){
             const rayAngle=lerp(
                 this.raySpread/2,
