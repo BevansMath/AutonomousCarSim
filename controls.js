@@ -26,7 +26,8 @@ class Controls{
                     
                     break
             }
-            console.table(this);
+            console.table(this.left);
+            console.table(this.right);
         }
 
         document.onkeyup=(event)=>{
@@ -44,7 +45,9 @@ class Controls{
                     this.reverse=false;
                     break
             }
-            
+            console.table(this.left);
+            console.table(this.right);
+
         }
 
     }

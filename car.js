@@ -48,7 +48,7 @@ class Car{
         if(this.velocity!=0){
             const flip = this.velocity>0?1:-1;
             if(this.controls.left){
-                this.angle-=0.03*flip;
+                this.angle+=0.03*flip;
             }
             if(this.controls.right){
                 this.angle-=0.03*flip;
