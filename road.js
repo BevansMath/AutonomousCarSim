@@ -37,7 +37,7 @@ class Road{
             const x=lerp(
                 this.left,
                 this.right,
-                i/this.laneCount
+                i/this.laneCountS
             );
             if(i>0 && i<this.laneCount){
                 ctx.setLineDash([20,20]);
