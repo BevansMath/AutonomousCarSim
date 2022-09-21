@@ -7,7 +7,6 @@ class Sensor{
 
         this.rays=[]; // Keeps individual array after we make them
         this.readings=[];
-        this.update();
 
     }
 
@@ -78,7 +77,7 @@ class Sensor{
                     this.rays[i][0].x,
                     this.rays[i][0].y,
                 );
-                ctx.lineto(
+                ctx.lineTo(
                     end.x,
                     end.y
                 );
