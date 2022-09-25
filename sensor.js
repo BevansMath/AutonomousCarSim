@@ -64,7 +64,6 @@ class Sensor{
     }
 
     draw(ctx){
-        try{
             for(let i=0;i<this.rayCount;i++){
                 let end=this.rays[i][1];
                 if(this.readings[i]){
@@ -96,8 +95,5 @@ class Sensor{
                 );
                 ctx.stroke();
             }
-        } catch(e){
-            console.log(e)
         }
     }
-}
