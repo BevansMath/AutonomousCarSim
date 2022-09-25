@@ -22,9 +22,9 @@ class Car{
             this.#move();
             this.polygon=this.#createPolygon();
             this.damaged=this.#assessDamage(roadBorders);
+            
         }
-
-        this.sensor.update(roadBorders);
+        this.sensor.update(roadBorders);    
     }
 
     #assessDamage(roadBorders){
@@ -53,13 +53,13 @@ class Car{
             y:this.y-Math.cos(Math.PI+this.angle-alpha)*rad
         });
         points.push({
-            x:this.x-Math.sin(this.angle+alpha)*rad,
-            y:this.y-Math.cos(this.angle+alpha)*rad
+            x:this.x-Math.sin(Math.PI+this.angle+alpha)*rad,
+            y:this.y-Math.cos(Math.PI+this.angle+alpha)*rad
         });
 
         return points
 
-    }
+    } 
     
     #move(){
         

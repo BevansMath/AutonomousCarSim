@@ -20,9 +20,5 @@ function animate(){
     car.draw(ctx);
 
     ctx.restore();
-    requestAnimationFrame(animate); //calls the animate frame many times per second
-
-    //if(car.update(this.controls.forward)=canvas.width){ //Constructing uncrossable borders
-         
-    
+    requestAnimationFrame(animate);
 }
