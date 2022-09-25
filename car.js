@@ -31,17 +31,17 @@ class Car{
         }
     }
 
-    #assessDamage(roadBorders,traffic){
+    #assessDamage(roadBorders, _traffic){
         for(let i=0; i<roadBorders.length;i++){
             if(polyIntersect(this.polygon, roadBorders[i])){
                 return true;
             }
         }
-        /*for(let i=0; i<traffic.length;i++){
+        for(let i=0; i<traffic.length;i++){
             if(polyIntersect(this.polygon,traffic[i].polygon)){
                 return true;
             }
-        }*/
+        }
         return false;
     }
 
