@@ -18,7 +18,6 @@ function animate(){
     }
     car.update(road.border,traffic);
 
-    car.update(road.border);
     canvas.height=window.innerHeight;
     ctx.save();
     ctx.translate(0, -car.y+canvas.height*0.5);

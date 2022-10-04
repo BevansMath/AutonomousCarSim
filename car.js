@@ -5,6 +5,8 @@ class Car{
         this.width=width;
         this.height=height;
 
+        this.angle=0;
+
         this.velocity=0;
         this.acceleration=0.2;
         this.maxVelocity=maxVelocity;
@@ -15,8 +17,6 @@ class Car{
             this.sensor=new Sensor(this);
         }
         this.controls=new Controls(controlType);
-
-        this.angle=0;
     }
 
     update(roadBorders,traffic){
@@ -31,7 +31,7 @@ class Car{
         }
     }
 
-    #assessDamage(roadBorders, _traffic){
+    #assessDamage(roadBorders, traffic){
         for(let i=0; i<roadBorders.length;i++){
             if(polyIntersect(this.polygon, roadBorders[i])){
                 return true;
@@ -66,7 +66,7 @@ class Car{
             y:this.y-Math.cos(Math.PI+this.angle+alpha)*rad
         });
 
-        return points
+        return points;
 
     } 
     
