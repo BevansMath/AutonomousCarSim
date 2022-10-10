@@ -1,9 +1,9 @@
 class Sensor{
     constructor(car){
         this.car=car;
-        this.rayCount=3; // casts rays in different directions
+        this.rayCount=5; // casts rays in different directions
         this.rayLength=100;
-        this.raySpread=Math.PI/4; // 45 degrees
+        this.raySpread=Math.PI/2; // 45 degrees
 
         this.rays=[]; // Keeps individual array after we make them
         this.readings=[];
@@ -19,7 +19,7 @@ class Sensor{
                     this.rays[i],
                     roadBorders,
                      traffic
-                    )
+                )
             );
         }
     }
@@ -94,7 +94,7 @@ class Sensor{
                 ctx.strokeStyle="yellow";
                 ctx.moveTo(
                     this.rays[i][0].x,
-                    this.rays[i][0].y,
+                    this.rays[i][0].y
                 );
                 ctx.lineTo(
                     end.x,
